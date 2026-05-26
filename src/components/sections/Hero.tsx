@@ -6,7 +6,6 @@ import { Play, ArrowLeft, CheckCircle2, BarChart3, Activity } from "lucide-react
 export function Hero() {
   return (
     <section className="relative min-h-[90vh] flex items-center pt-32 pb-20 overflow-hidden bg-gradient-to-br from-surface-blue via-surface-purple to-surface-green">
-      {/* المان‌های تزئینی متحرک */}
       <motion.div 
         animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
         transition={{ duration: 8, repeat: Infinity }}
@@ -21,14 +20,12 @@ export function Hero() {
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           
-          {/* سمت راست: متن و دکمه‌ها */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
             className="text-right"
           >
-            {/* تگ بالا */}
             <motion.div 
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -40,20 +37,17 @@ export function Hero() {
               <span>تحلیل حرکت با دقت ۹۹.۷٪</span>
             </motion.div>
             
-            {/* عنوان اصلی */}
             <h1 className="text-4xl md:text-6xl font-bold text-slate-900 leading-[1.2] mb-6">
               تحلیل بیومکانیکی <br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-l from-blue-600 via-purple-600 to-pink-600 animate-pulse">
+              <span className="text-transparent bg-clip-text bg-gradient-to-l from-blue-600 via-purple-600 to-pink-600">
                 حرفه‌ای با هوش مصنوعی
               </span>
             </h1>
             
-            {/* توضیحات */}
             <p className="text-lg md:text-xl text-gray-600 mb-10 leading-relaxed max-w-lg">
               با آپلود ویدیوی حرکت خود، تحلیل دقیق زاویه مفاصل، نیروها و الگوهای حرکتی را در کمتر از ۶۰ ثانیه دریافت کنید.
             </p>
             
-            {/* دکمه‌ها */}
             <div className="flex flex-col sm:flex-row gap-4">
               <motion.button 
                 whileHover={{ scale: 1.02 }}
@@ -73,7 +67,6 @@ export function Hero() {
               </motion.button>
             </div>
             
-            {/* آمار پایین */}
             <motion.div 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -85,7 +78,7 @@ export function Hero() {
                 <div className="text-sm text-gray-600 font-medium mt-1">تحلیل انجام‌شده</div>
               </div>
               <div className="text-right">
-                <div className="text-3xl font-bold text-purple-600">۹۹.۷٪</div>
+                <div className="text-3xl font-bold text-purple-600">۹۹.٪</div>
                 <div className="text-sm text-gray-600 font-medium mt-1">دقت مدل</div>
               </div>
               <div className="text-right">
@@ -95,34 +88,26 @@ export function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* سمت چپ: تصویر/داشبورد */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             className="relative"
           >
-            {/* قاب اصلی */}
-            <motion.div
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="relative bg-white rounded-3xl p-6 shadow-2xl border border-gray-100"
-            >
-              <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl overflow-hidden aspect-[4/3] flex items-center justify-center">
-                <div className="text-center p-8">
-                  <motion.div 
-                    animate={{ scale: [1, 1.1, 1] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                    className="w-24 h-24 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-xl mx-auto mb-6"
-                  >
-                    <Play className="w-10 h-10 text-white fill-white ml-1" />
-                  </motion.div>
-                  <p className="text-gray-600 font-bold text-lg">پیش‌نمایش تحلیل بیومکانیک</p>
-                </div>
+            <div className="relative bg-white rounded-3xl p-4 shadow-2xl border border-gray-100">
+              <div className="rounded-2xl overflow-hidden aspect-[4/3] bg-slate-900 relative">
+                <video
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="w-full h-full object-cover"
+                >
+                  <source src="/videos/motion-preview.mp4" type="video/mp4" />
+                </video>
               </div>
-            </motion.div>
+            </div>
             
-            {/* کارت شناور ۱ */}
             <motion.div
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 4, repeat: Infinity }}
@@ -134,12 +119,11 @@ export function Hero() {
                 </div>
                 <div>
                   <div className="font-bold text-slate-900">زاویه زانو</div>
-                  <div className="text-sm text-gray-500">۱۲۷.۳° - بهینه</div>
+                  <div className="text-sm text-gray-500">۱۷.۳° - بهینه</div>
                 </div>
               </div>
             </motion.div>
             
-            {/* کارت شناور ۲ */}
             <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 5, repeat: Infinity, delay: 1 }}
